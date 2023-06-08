@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오스</title>
+    <link rel="shortcut icon" href="/images/tlog.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- 배경 -->
+        <div class="bg"></div>
+        <!-- 로고 이미지 -->
+        <img src="/images/main.jpg" style="display:none" class="logo"/>
+        <!------컨테이너 시작------->
+        <header>
+            <!------헤더 시작------->
+            <div class="main">
+                <div class="text">
+                    <h1>오늘의 스트레칭</h1> 
+                    <h2>오늘 하루에 스트레칭을 더해주는 사이트입니다.</h2>
+                </div>
+                <nav>
+                    <!------네비 시작------->
+                    <div class="nav-fir">
+                        <div class="nav-sidebar">
+                            <input type="checkbox" id="menuicon" />
+                            <!------메뉴 삼단바------->
+                            <label for="menuicon" class="menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </label>
+                            <!------삼단바 활성화시 나올 사이드바------->
+                            <div class="sidebar">
+                                <div class="barinfo">
+                                    <h1>카테고리별 분류</h1>
+                                </div>
+                                <ul class="sidebar-ul">
+                                    <li>
+                                        <!-- 드롭 다운 버튼 -->
+                                        <span class="dropdown">운동 전/후 컨디셔닝</span>
+                                        <ul class="submenu">
+                                            <li><a href="#">운동 전 컨디셔닝</a></li>
+                                            <li><a href="#2">운동 후 컨디셔닝</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="dropdown">부상 예방 스트레칭</span>
+                                        <ul class="submenu">
+                                            <li><a href="#">축구</a></li>
+                                            <li><a href="#3">야구</a></li>
+                                            <li><a href="#3">농구</a></li>
+                                            <li><a href="#3">배드민터</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="dropdown">도구 사용법</span>
+                                        <ul class="submenu">
+                                            <li><a href="#">폼룰러</a></li>
+                                            <li><a href="#3">마사지볼</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!------네비 끝------->
+                </nav>
+            </div>
+            <!------헤더 끝------->
+        </header>
+        <div class="contents">
+            <!------컨텐츠 시작------->
+            <div id="people">
+                <img src="/images/front.png" alt="인체 사진">
+            </div>
+            <button id="backButton" type="button">
+                초기화
+            </button>
+            <button id="twin" type="button">
+                뒤돌기
+            </button>
+            <!-- 메인 텍스트 + 애니메이션효과 -->
+            <div id="description" class="blink"> 
+                <p>근육을 클릭해 주세요!</p>
+            </div>
+            <!-- <div id="description2">
+            </div> -->
+            <!------컨텐츠 끝------->
+        </div>
+        <footer>
+            <!------푸터 시작------->
+            <div id="footer-div">
+                <ul>
+                    <li><a href="#">사이트소개</a></li>
+                    <li><a href="#">문의하기</a></li>
+                </ul>
+            </div>
+            <div id="company">
+                <p>경기도 안양시 동안구 임곡로 29 전산관 (대표전화) 123-456-7890</p>
+                <P>이메일 문의 : abc@gmail.com, 디스코드 문의 : 대림대#30403</P> 
+                <P>본 사이트는 <span style="color: red;">정식 사이트</span>가 아님에 주의해주세요. </P> 
+            </div> 
+            <!------푸터 끝------->
+        </footer>
+        <!------컨테이너 끝------->
+    </div>
+
+
+
+<!-- 이 컨테이너 부분을 웹사이트로 볼때 출력 될 container을 넣으면 됨. -->
+    <div class="container2">
+        <!-- 여기에 다른 HTML 내용 넣으면 됨. -->
+    </div>
+    <!-- 마우스 이동시 이미지 안에서 좌표 찍어줌  -->
+    <!-- <script src="js/possible.js"></script> -->
+    <!-- width값으로 로드시 html div값이랑 css 출력-->
+    <script src="js/transforme.js"></script>
+    <!-- 사이드바 관련 , 백 그라운드 , 애니메이션 효과, 드롭다운 기능 -->
+    <script src="js/main.js"></script>
+    <!-- 이미지 전환 -->
+    <script src="js/changeimg.js"></script>
+    <!-- 이미지 로드 -->
+    <script>
+        const preloadedImages = [];
+  
+        function preloadImage(imageSrc) {
+          const img = new Image();
+          img.src = imageSrc;
+          preloadedImages.push(img);
+        }
+  
+        // 이미지 경로를 배열에 추가
+        const imagePaths = [
+          '/images/front.png',
+          '/images/back.png',
+          '/images/back1.png',
+          // 여기에 미리 로드할 이미지 경로 추가
+        ];
+  
+        // 이미지 미리 로드
+        imagePaths.forEach((path) => {
+          preloadImage(path);
+        });
+      </script>
+</body>
+</html>

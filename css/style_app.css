@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+/* 기본세팅 */
+*{
+  margin: 0 ;
+  padding: 0;
+  box-sizing: border-box;
+}
+a, a:link, a:visited{
+  text-decoration: none; /* a태그에 밑줄을 없애줌 */
+  color: black;
+}
+ul{
+  list-style: none;
+}
+p, li{
+  font-family: 'Noto Sans KR', sans-serif;
+}
+/* 기본 세팅 끝 */
+/* 로고 */
+.logo {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+/* 사이드바 활성화 시 나올 백그라운드 */
+.bg{
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.385);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.container{
+    width: 410px;
+    margin: 0 auto;
+}
+/* --------------헤더 시작-------------- */
+header{
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    z-index: 1;
+}
+/* 상단 부분 */
+.main{ 
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.534)),
+    url("/images/background.jpg") center top;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+}   
+.main .text{
+    margin-top: 5px;
+    color: rgba(255, 255, 255, 0.83);
+    float: right;
+    text-align: center;
+}
+.main .text h1{
+  color: rgba(255, 255, 255, 0.83);
+  padding: 10px 0px 0 00px;
+  font-family: 'Jua', sans-serif;
+  font-size: 2em;
+}
+.main h2{
+  font-size: 0.8em;
+  font-weight: bold;
+}
+nav{
+    float: left;
+}
+/* 삼단 메뉴 버튼 부분 */
+#menuicon {
+    display:none;
+}
+#menuicon + label {
+    margin: 20px 0px 0 10px;
+    position:absolute;
+    display:block;
+    width:25px;
+    height:25px;
+    cursor:pointer;
+  }
+#menuicon + label span {
+    display:block;
+    position:absolute;
+    width:100%;
+    height:2.6px;
+    border-radius: 10px;
+    background:#fff;
+    transition:all .35s;
+  }
+  #menuicon + label span:nth-child(1) {
+    top:0%;
+  }
+  #menuicon + label span:nth-child(2) {
+    top:50%;
+    transform:translateY(-50%);
+  }
+  #menuicon + label span:nth-child(3) {
+    bottom:0%;
+  }
+  #menuicon:checked + label {
+    z-index:2;
+  }
+  #menuicon:checked + label span:nth-child(1) {
+    top:50%;
+    transform:translateY(-50%) rotate(45deg);
+  }
+  #menuicon:checked + label span:nth-child(2) {
+    opacity:0;
+  }
+  #menuicon:checked + label span:nth-child(3) {
+    bottom:50%;transform:translateY(50%) rotate(-45deg);
+  }
+  /* 삼단 메뉴 클릭시 슬라이드 부분 */
+  #menuicon:checked ~ .sidebar {
+    transform: translateX(0); /* Slide the sidebar in */
+    transition-duration: 0.6s;
+    opacity: 1;
+    visibility: visible;
+  }
+  #menuicon:checked + label + .sidebar {
+    width: 205px;
+    height: 800px;
+  }
+  .nav-sidebar{
+    position: absolute;
+  }
+  .sidebar {
+    position: relative;
+    transform: translateX(-100%); /* Start with the sidebar hidden off-screen */
+    opacity: 0;
+    visibility: hidden;
+    background-color: #ffffff;
+    transition-duration: 0.6s;
+    z-index: 1;
+  }
+  /* 활성화된 사이드바 상단 부분 (메뉴 버튼 옆) */
+  .sidebar .barinfo{
+    background-color: rgba(95, 158, 160, 0.671);
+    height: 8%;
+  }
+  .sidebar .barinfo h1{
+    color: rgba(255, 255, 255, 0.83);
+    text-align: center;
+    padding: 17px 0 0 10px;
+    font-family: 'Jua', sans-serif;
+    font-size: 1.3em;
+  }
+  /* 사이드바 내에 드롭다운 추가 */
+  .dropdown {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.112);
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    display: block;
+    transition: background-color 0.35s, color 0.35s;
+  }
+  .dropdown:hover {
+    background-color: rgba(35, 167, 123, 0.295);
+    color: white;
+  }
+  .submenu {
+    height: 0;
+    overflow: hidden;
+    transform: translateY(-10%);
+    transition-duration: 0.6s;
+  }
+  /* 드롭다운 활성화 시 나 올 li 요소들 */
+  .submenu.active {
+    height: auto;
+    transform: translateY(0);
+    transition-duration: 0.6s;
+  }
+  .submenu.active li{
+    padding-left: 20px; 
+  }
+  .submenu.active li:last-child{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.112);
+
+    padding-left: 20px; 
+  }
+  .submenu.active li a{
+    font-size: 0.8em;
+  }
+  .submenu.active li:hover{
+    background-color: rgba(35, 167, 123, 0.295);
+  }
+  .submenu.active li:hover a {
+    color: white
+}
+  .sidebar-ul{
+    margin-top: 20px;
+  }
+/* --------------헤더 끝-------------- */
+/* --------------컨텐츠 시작-------------- */
+ .contents{
+  text-align: center;
+  /* display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 좌우로 공간 분배 */
+ }
+ /* 버튼 통합 */
+ .contents button{
+  padding: 8px 20px;
+  margin: 15px 0 0 0;
+  height: 50px;
+  font-size: 20px;
+  font-family: 'Jua', sans-serif;
+  background-color: #678168;
+  border-radius: 20px;
+  border: 2px solid black;
+  color: white;
+ }
+ /* 초기화 버튼 */
+ .contents #backButton{
+  float: none;
+ }
+ /* 뒤돌기 버튼 */
+ .contents #twin{
+  float: none;
+ }
+ /* 이미지 넣을 부분 */
+ #people {
+  margin-left: 100px;
+  height: 400px;
+  margin-top: 10px;
+}
+ #people img{
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 200px;
+  height: 100%;
+}
+/* 메시지 출력 될 부분 */
+.contents #description{
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1em;
+  border-radius: 10px;
+  border: 1.5px solid black;
+  height: auto;
+}
+/* 메시지 애니메이션 */
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#description{
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.blink p{
+  animation: blink 1s ease;
+}
+/*  좌표 찍을 때 쓰는 부분
+.contents #description2{
+  text-align: center;
+} */
+/* --------------컨텐츠 끝-------------- */
+/* --------------푸터 시작-------------- */
+footer{   
+  margin-top:15px;
+  width:100%;
+  text-align: center; 
+}
+#footer-div ul li{
+  padding: 0 5px 0 10px;
+  display: inline;
+  border-left:1px solid #ddd; 
+  font-size:0.7em; 
+}
+/* 첫번째 항목에 왼쪽 보더 삭제 */
+#footer-div ul li:first-child{
+border:none;
+}
+#footer-div ul li a, #footer-div ul li a:visited {  
+  color:#666;
+}
+#company{
+  margin-top:5px;  
+}
+#company p{
+font-size:0.5em; 
+color:#aaa; 
+}
+/* --------------푸터 끝-------------- */
+
+
+
+
+
+
+
+  .popup {
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 200px;
+    display: none;
+  }
+  
+
