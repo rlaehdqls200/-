@@ -12,7 +12,12 @@ button{
     margin: 0 auto;
     position: relative;
 }
-
+.container{
+    display: none;
+}
+.container2{
+    display: none;
+}
 .wrap-header{
     position: fixed;
     width: 100%;
