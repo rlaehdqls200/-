@@ -7,14 +7,16 @@ function handleLoad() {
     var width = window.innerWidth;
     //화면넓이가 768보다 클시 style.css랑 HTML에 container2안에 내용 활성화
     if  (width >= 768) {
-        loadStyleSheet("/css/style.css");
+        loadStyleSheet("/css/test.css");
+        loadStyleSheet("/css/reset.css");
         unloadStyleSheet("/css/style_app.css");
         container.style.display = "none";
         container2.style.display = "block";
     //화면넓이가 768보다 작을시 style_app.css(앱 전용 화면)랑 HTML에 container안에 내용 활성화
     } else {
       loadStyleSheet("/css/style_app.css");
-        unloadStyleSheet("/css/style.css");
+        unloadStyleSheet("/css/reset.css");
+        unloadStyleSheet("/css/test.css");
         container.style.display = "block";
         container2.style.display = "none";
     }

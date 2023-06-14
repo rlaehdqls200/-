@@ -1,0 +1,241 @@
+/*css 초기화*/
+@import "reset.css";
+
+button{
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.wrap-header{
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    background-color: transparent;
+    z-index: 5;
+}
+
+.head-logo{
+    position: fixed;
+    opacity: 100%;
+    z-index: 10;
+    margin: 10px 0;
+    left: 10%;
+    transform: translate(0%, 0%);
+}
+
+.btn-top{
+    background-color: transparent;
+    padding: 0px;
+}
+
+.btn-top span{
+    font-weight: bold;
+    font-size: 35px;
+    vertical-align:super;
+}
+
+.btn-top img{
+    width: 55px;
+    height: 55px;
+}
+
+.head-title{
+    position: fixed;
+    top: 35px;
+    right: 10%;
+    transform: translate(0%, 0%);
+    z-index: 10;
+}
+
+.head-title button{
+    background-color: transparent;
+    font-size: 19px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.head-title span{
+    margin-right: 18px;
+}
+
+.con-title{
+    background-color: #e3e3e3;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.con-title-text{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.con-title img{
+    opacity: 35%;
+    width: 100%;
+    height: 100%;
+}
+
+.con-title h1{
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.con-title p{
+    font-size: 20px;
+}
+
+.con-title h3{
+    border:2px solid #dfdfdf;
+    width: 550px;
+    margin: 20px 0 60px 0;
+}
+
+.con-button{
+    position: absolute;
+    top: 550px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-start{
+    background-color: transparent;
+    font-size: 30px;
+    font-weight: bold;
+    border: 2px solid #dfdfdf;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+
+.con-type{
+    margin-bottom:50px;
+    padding-top: 130px;
+}
+
+.con-type h3{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 80px;
+}
+
+.con-type ul{
+    display: flex;
+    justify-content: center
+}
+
+.con-type p{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 35px;
+    border-bottom: 2px solid #dfdfdf;
+    width: 130px;
+    padding: 10px;
+}
+
+.buttonImg1{
+    width: 50%;
+}
+
+.buttonImg2{
+    width: 65%;
+}
+
+.buttonImg3{
+    width: 45%;
+    margin-top: 15px;
+}
+.con-text-box{
+    width: 80%;
+    margin: auto;
+}
+
+.con-text1, .con-text2, .con-text3{
+    padding-top: 80px;
+    height: 100%;
+    border-top: 3px solid #dfdfdf;
+}
+
+.con-text h3{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.con-text li{
+    font-size: 17px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.con-text h5{
+    font-size: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #dfdfdf;
+    width: 150px;
+}
+
+.con-text-index{
+    border-bottom: 3px solid #dfdfdf;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.con-text dl{
+    margin-bottom: 20px;
+}
+
+.con-text dt{
+    font-size: 25px;
+    border-bottom: 2px solid #dfdfdf;
+    padding: 10px;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.con-text dd{
+    border-left: 2px solid #dfdfdf;
+    margin-left: 40px;
+    padding-bottom: 10px;
+}
+
+.con-text dd img{
+    margin:15px 0 0 10px;
+    width: 10%;
+    height: 10%;
+}
+
+.con-text em{
+    display: inline-block;
+    font-size: 25px;
+    margin: 15px;
+}
+
+.con-text p{
+    margin-left: 30px;
+    margin-bottom: 3px;
+}
+
+.con-text a{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.con-text b{
+    font-size: 20px;
+    font-weight: 800;
+}
